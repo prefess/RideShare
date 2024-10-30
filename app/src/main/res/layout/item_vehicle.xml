@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/vehicle_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop" />
+
+    <ImageView
+        android:id="@+id/vehicle_delete"
+        android:layout_width="28dp"
+        android:layout_height="22dp"
+        android:src="@android:drawable/ic_menu_delete"
+        android:layout_alignParentEnd="true"/>
+
+    <TextView
+        android:id="@+id/vehicle_model"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="16dp"
+        android:text="Vehicle Model"
+        android:textStyle="bold"
+        android:textSize="22sp" />
+</RelativeLayout>

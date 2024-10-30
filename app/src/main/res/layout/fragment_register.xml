@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.rideshare.fragment.RegisterFragment">
+
+    <ImageView
+        android:id="@+id/image_welcome"
+        android:layout_width="match_parent"
+        android:layout_height="255dp"
+        android:src="@drawable/welcome" />
+    <TextView
+        android:id="@+id/text_login"
+        android:layout_below="@+id/image_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Register"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:layout_centerInParent="true"/>
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_width="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        android:textSize="18sp"
+        android:layout_below="@+id/text_login"
+        android:text="Welcome, please create your account using email address"/>
+
+    <EditText
+        android:id="@+id/name_input"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/text_view"
+        android:hint=" Enter your name"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/custom_input_background"/>
+
+    <EditText
+        android:id="@+id/email_input"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint=" Enter your email address"
+        android:inputType="textEmailAddress"
+        android:layout_below="@id/name_input"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/custom_input_background"/>
+
+    <EditText
+        android:id="@+id/password_input"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint=" Enter your password"
+        android:inputType="textPassword"
+        android:layout_below="@id/email_input"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/custom_input_background"/>
+
+    <Button
+        android:id="@+id/register_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:layout_below="@id/password_input"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#007BFF"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

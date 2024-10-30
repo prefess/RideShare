@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.UpdateDriverProfileActivity"
+    android:padding="16dp">
+    <ImageView
+        android:id="@+id/image_profile"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="20dp"
+        android:src="@drawable/ic_profile"/>
+
+    <ImageView
+        android:id="@+id/update_profile_image"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignEnd="@+id/image_profile"
+        android:layout_alignBottom="@+id/image_profile"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/edit_profile" />
+
+    <TextView
+        android:id="@+id/username_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User name"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:layout_below="@+id/image_profile"/>
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/custom_input_background"
+        android:text="Nguyen Van A"
+        android:textSize="18dp"
+        android:layout_below="@+id/username_text"/>
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Email address"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:layout_below="@+id/username"/>
+    <EditText
+        android:id="@+id/email_address"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/custom_input_background"
+        android:text="abc@mail.com"
+        android:textSize="18dp"
+        android:layout_below="@+id/email"/>
+
+    <TextView
+        android:id="@+id/mobile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Mobile phone"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:layout_below="@+id/email_address"/>
+    <EditText
+        android:id="@+id/mobile_phone"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/custom_input_background"
+        android:text="+84987654321"
+        android:textSize="18dp"
+        android:layout_below="@+id/mobile"/>
+
+    <TextView
+        android:id="@+id/insurance_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mobile_phone"
+        android:text="License:"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textStyle="bold"
+        android:textSize="18sp" />
+    <ImageView
+        android:id="@+id/driverLicenseImageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/ic_car"
+        android:layout_below="@id/insurance_text"
+        android:layout_marginTop="16dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:id="@+id/update_license_image"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignEnd="@+id/driverLicenseImageView"
+        android:layout_alignTop="@+id/driverLicenseImageView"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/edit_profile" />
+
+    <Button
+        android:id="@+id/publish_ride_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:layout_below="@id/driverLicenseImageView"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:backgroundTint="#007BFF" />
+
+</RelativeLayout>

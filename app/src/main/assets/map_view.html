@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Draw route on map using Goong Directions API</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="https://cdn.jsdelivr.net/npm/@goongmaps/goong-js@1.0.9/dist/goong-js.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@goongmaps/goong-js@1.0.9/dist/goong-js.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/@mapbox/polyline/src/polyline.js"></script>
+    <script src="https://unpkg.com/@goongmaps/goong-sdk/umd/goong-sdk.min.js"></script>
+
+    <div id="map"></div>
+    <script>
+        goongjs.accessToken = 'WQCQ0CEATBAYxVd2qAOU7l8t8GK8OQivSX45dMg7';
+        var map = new goongjs.Map({
+            container: 'map',
+            style: 'https://tiles.goong.io/assets/goong_map_web.json',
+            center: [105.771846, 10.0041545],
+            zoom: 11.5
+        });
+
+        var firstSymbolId;
+
+        // Wait until the map is fully loaded
+        map.on('load', function() {
+            var layers = map.getStyle().layers;
+            // Find the index of the first symbol layer in the map style
+            var firstSymbolId;
+            for (var i = 0; i < layers.length; i++) {
+                if (layers[i].type === 'symbol') {
+                    firstSymbolId = layers[i].id;
+                    break;
+                }
+            }
+        });
+        function setRouteData(origin, destination, stops) {
+            //alert("setRouteData called with Origin: " + origin + " Destination: " + destination + " Stops: " + stops);
+            var originCoords = origin.split(",");
+                var destinationCoords = destination.split(",");
+                var stopsCoords = stops.split("|").map(function (stop) {
+                    return stop.split(",");
+                });
+            // Initialize goongClient with an API KEY
+            var goongClient = goongSdk({
+                accessToken: 'ev462XimiOdpXhXSEvpgerUlXTLjGVXoo7oVj1ZD'
+            });
+            // Get Directions
+            goongClient.directions
+                .getDirections({
+                    origin: originCoords[0] + "," + originCoords[1],
+                    destination: destinationCoords[0] + "," + destinationCoords[1],
+                    vehicle: 'car',
+                })
+                .send()
+                .then(function(response) {
+                    var directions = response.body;
+                    var route = directions.routes[0];
+
+                    var geometry_string = route.overview_polyline.points;
+                    var geoJSON = polyline.toGeoJSON(geometry_string);
+                    map.addSource('route', {
+                        'type': 'geojson',
+                        'data': geoJSON
+                    });
+                    // Add route layer below symbol layers
+                    map.addLayer({
+                            'id': 'route',
+                            'type': 'line',
+                            'source': 'route',
+                            'layout': {
+                                'line-join': 'round',
+                                'line-cap': 'round'
+                            },
+                            'paint': {
+                                'line-color': '#1e88e5',
+                                'line-width': 8
+                            }
+                        },
+                        firstSymbolId
+                    );
+                    // Add markers for origin, stops, and destination
+                    addMarker(map, origin, 'Origin', 'blue');
+                    addMarker(map, destination, 'Destination', 'red');
+
+                    // If there are stops, add markers for them
+                    if (stops) {
+                        var stopLocations = stops.split('|');
+                        stopLocations.forEach(function (stop, index) {
+                            addMarker(map, stop, 'Stop ' + (index + 1), 'green');
+                        });
+                    }
+                });
+            }
+        function addMarker(map, location, title, color) {
+            var coords = location.split(',');
+            var lngLat = [parseFloat(coords[1]), parseFloat(coords[0])];
+            new goongjs.Marker({
+                color: color
+            })
+                .setLngLat(lngLat)
+                .setPopup(new goongjs.Popup().setText(title)) // add popups
+                .addTo(map);
+        }
+    </script>
+
+</body>
+
+</html>

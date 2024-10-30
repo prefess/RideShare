@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#f2f2f2"
+    tools:context=".activity.EndedRideActivity">
+    <ImageView
+        android:id="@+id/ended_car"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="200dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ended_car"/>
+
+    <TextView
+        android:id="@+id/congratulations_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ride ended"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#FFA000"
+        android:layout_below="@+id/ended_car"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hope you have a great car pooling experience"
+        android:textSize="18sp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:gravity="center"
+        android:layout_below="@id/congratulations_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/back_to_home_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back to home"
+        android:textSize="20sp"
+        android:textColor="#0000FF"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"/>
+</RelativeLayout>

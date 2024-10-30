@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp">
+    <TextView
+        android:id="@+id/guest_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guest Name"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/guest_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guest Email"
+        android:textSize="14sp"
+        android:textColor="#888888" />
+
+    <TextView
+        android:id="@+id/guest_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guest Phone"
+        android:textSize="14sp"
+        android:textColor="#888888" />
+
+    <TextView
+        android:id="@+id/guest_seat_booked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guest Seat Booked"
+        android:textSize="14sp"
+        android:textColor="#888888" />
+
+</LinearLayout>

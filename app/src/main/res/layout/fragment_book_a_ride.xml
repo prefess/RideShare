@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.rideshare.fragment.BookARideFragment">
+
+    <!-- Header with Illustration -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="#FFFFFF"
+        android:padding="16dp"
+        android:id="@+id/header">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="130dp"
+            android:src="@drawable/background" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Find and Book Rides at Low Prices"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginTop="16dp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <!-- ScrollView to make the form scrollable -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        android:layout_marginTop="16dp">
+
+    <!-- Search Form inside ScrollView -->
+        <!-- Search Form -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:elevation="2dp"
+            android:padding="16dp"
+            android:layout_margin="16dp"
+            android:layout_below="@id/header"
+            android:layout_marginTop="60dp">
+
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteLeavingFrom"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="8dp"
+                android:drawableStart="@drawable/ic_location_start"
+                android:hint=" Pick up location"
+                android:focusableInTouchMode="false"
+                android:clickable="true"
+                android:textColor="@android:color/black"
+                android:background="@drawable/custom_input_background"/>
+
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteGoingTo"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint=" Destination location"
+                android:drawableStart="@drawable/ic_location_end"
+                android:layout_marginBottom="8dp"
+                android:focusableInTouchMode="false"
+                android:clickable="true"
+                android:textColor="@android:color/black"
+                android:background="@drawable/custom_input_background" />
+
+            <TextView
+                android:id="@+id/select_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Date"
+                android:layout_marginTop="20dp"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <EditText
+                    android:id="@+id/editTextSelectDateTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:hint=" Date &amp; time"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:background="@drawable/custom_input_background"/>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Person"
+                android:layout_marginTop="20dp"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/spinnerPerson"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="8dp"
+                android:theme="@style/SpinnerTheme"
+                android:background="@drawable/custom_input_background"/>
+
+            <Button
+                android:id="@+id/search_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Find ride"
+                android:paddingTop="20dp"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#007BFF"
+                android:padding="12dp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

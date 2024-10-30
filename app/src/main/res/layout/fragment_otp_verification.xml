@@ -1,0 +1,132 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.rideshare.fragment.OTPVerificationFragment">
+
+    <ImageView
+        android:id="@+id/image_welcome"
+        android:layout_width="match_parent"
+        android:layout_height="255dp"
+        android:src="@drawable/welcome" />
+
+    <TextView
+        android:id="@+id/text_otp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OTP Verification"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/image_welcome"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:id="@+id/text_phone_receive"
+        android:layout_width="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        android:textSize="18sp"
+        android:layout_below="@+id/text_otp"
+        android:text="Confirmation code has been sent to your mobile phone number +84"/>
+
+    <LinearLayout
+        android:id="@+id/otp_container"
+        android:layout_below="@+id/text_phone_receive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/otp_input_1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:inputType="number"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:maxLength="1"
+            android:layout_margin="2dp"
+            android:background="@drawable/otp_input_background"
+            android:focusableInTouchMode="true"/>
+
+        <EditText
+            android:id="@+id/otp_input_2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:inputType="number"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:maxLength="1"
+            android:layout_margin="2dp"
+            android:background="@drawable/otp_input_background"
+            android:focusableInTouchMode="true"/>
+
+        <EditText
+            android:id="@+id/otp_input_3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:inputType="number"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:maxLength="1"
+            android:layout_margin="2dp"
+            android:background="@drawable/otp_input_background"
+            android:focusableInTouchMode="true"/>
+
+        <EditText
+            android:id="@+id/otp_input_4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:inputType="number"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:maxLength="1"
+            android:layout_margin="2dp"
+            android:background="@drawable/otp_input_background"
+            android:focusableInTouchMode="true"/>
+
+        <EditText
+            android:id="@+id/otp_input_5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:inputType="number"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:maxLength="1"
+            android:layout_margin="2dp"
+            android:background="@drawable/otp_input_background"
+            android:focusableInTouchMode="true"/>
+
+        <EditText
+            android:id="@+id/otp_input_6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:inputType="number"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:maxLength="1"
+            android:layout_margin="2dp"
+            android:background="@drawable/otp_input_background"
+            android:focusableInTouchMode="true"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/verify_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verify"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="16dp"
+        android:enabled="false"
+        android:backgroundTint="#007BFF"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

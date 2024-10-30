@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">RideShare</string>
+    <string name="title_activity_publish">PublishActivity</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_ride">RideActivity</string>
+
+    <!--    <string name="app_name">RideShare</string>-->
+    <string-array name="person_array">
+        <item>Select no. people</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+    <string-array name="person_array_book">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+    <string-array name="vehicle_list_array">
+        <item>Car</item>
+        <item>Van</item>
+        <item>Bus</item>
+        <item>Bike</item>
+    </string-array>
+    <string name="profile_image">Profile image</string>
+    <string name="license_image">Driver license image</string>
+    <string-array name="filter_options_driver">
+        <item>Upcoming Rides</item>
+        <item>Past Rides</item>
+        <item>Current Rides</item>
+    </string-array>
+    <string-array name="filter_options">
+        <item>Upcoming Rides</item>
+        <item>Past Rides</item>
+    </string-array>
+</resources>

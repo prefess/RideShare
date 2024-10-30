@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.LocationPickerActivity">
+  <!-- Search bar for location search -->
+<!--  <EditText-->
+<!--      android:id="@+id/etSearchLocation"-->
+<!--      android:layout_width="match_parent"-->
+<!--      android:layout_height="wrap_content"-->
+<!--      android:hint="Search location" />-->
+
+  <!-- WebView for displaying Goong Maps -->
+  <WebView
+      android:id="@+id/webViewMap"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1" />
+
+  <!-- Confirm button to select location -->
+  <Button
+      android:id="@+id/btnConfirmLocation"
+      android:layout_marginStart="5dp"
+      android:layout_marginEnd="5dp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="18dp"
+      android:textStyle="bold"
+      android:backgroundTint="#007BFF"
+      android:text="Pick this location" />
+  </LinearLayout>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Location Picker with Address Search</title>
+    <script src="https://cdn.jsdelivr.net/npm/@goongmaps/goong-js@1.0.9/dist/goong-js.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@goongmaps/goong-js@1.0.9/dist/goong-js.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 60px;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #searchBox {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: calc(100% - 20px);
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        #confirmButton {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background-color: #1e88e5;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #confirmButton:hover {
+            background-color: #0c7cd5;
+        }
+
+        #locationInfo {
+            position: absolute;
+            bottom: 60px;
+            left: 10px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+<input type="text" id="searchBox" placeholder="Enter an address" />
+<div id="map"></div>
+<div id="locationInfo">Latitude: <span id="lat">0</span>, Longitude: <span id="lng">0</span></div>
+<button id="confirmButton">Confirm Location</button>
+
+<script src="https://unpkg.com/@goongmaps/goong-sdk/umd/goong-sdk.min.js"></script>
+<script>
+    goongjs.accessToken = 'WQCQ0CEATBAYxVd2qAOU7l8t8GK8OQivSX45dMg7';
+    const defaultCenter = [105.850, 21.033]; // Default to Hanoi coordinates
+
+    // Initialize the map
+    var map = new goongjs.Map({
+        container: 'map',
+        style: 'https://tiles.goong.io/assets/goong_map_dark.json',
+        center: defaultCenter,
+        zoom: 12
+    });
+
+    // Create a marker for the selected location
+    var marker = new goongjs.Marker({
+        draggable: true
+    }).setLngLat(defaultCenter).addTo(map);
+
+    // Update the location info when the marker is dragged
+    marker.on('dragend', function () {
+        var lngLat = marker.getLngLat();
+        document.getElementById('lat').textContent = lngLat.lat.toFixed(6);
+        document.getElementById('lng').textContent = lngLat.lng.toFixed(6);
+    });
+
+    // Geolocate the user's current location
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            var userLocation = [position.coords.longitude, position.coords.latitude];
+            map.flyTo({
+                center: userLocation,
+                zoom: 14
+            });
+            marker.setLngLat(userLocation);
+            document.getElementById('lat').textContent = position.coords.latitude.toFixed(6);
+            document.getElementById('lng').textContent = position.coords.longitude.toFixed(6);
+        });
+    }
+
+    // Use Goong Geocoding for the search box
+    document.getElementById('searchBox').addEventListener('change', function () {
+        var address = document.getElementById('searchBox').value;
+        var goongClient = goongSdk({
+            accessToken: 'YOUR_GOONG_SDK_ACCESS_TOKEN'
+        });
+
+        goongClient.geocoding
+            .forwardGeocode({
+                query: address,
+                limit: 1
+            })
+            .send()
+            .then(function (response) {
+                var result = response.body.features[0];
+                if (result) {
+                    var lat = result.geometry.coordinates[1];
+                    var lng = result.geometry.coordinates[0];
+                    marker.setLngLat([lng, lat]);
+                    map.flyTo({ center: [lng, lat], zoom: 14 });
+                    document.getElementById('lat').textContent = lat.toFixed(6);
+                    document.getElementById('lng').textContent = lng.toFixed(6);
+                } else {
+                    alert('Address not found');
+                }
+            });
+    });
+
+    // When the confirm button is clicked
+    document.getElementById('confirmButton').addEventListener('click', function () {
+        var lngLat = marker.getLngLat();
+        var address = document.getElementById('searchBox').value;
+        AndroidInterface.setLocationData(lngLat.lat, lngLat.lng, address);
+    });
+</script>
+
+</body>
+
+</html>

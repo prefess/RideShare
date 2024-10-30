@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="6dp"
+    tools:context=".activity.DriverRideDetailActivity">
+    <!-- Top Section -->
+    <LinearLayout
+        android:id="@+id/top_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="#FFFFFF">
+
+        <ImageView
+            android:id="@+id/driver_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_profile" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/driver_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jacob Jones"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/driver_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4.8 ⭐ | 0 reviews"
+                android:textSize="14sp"
+                android:textColor="#888888" />
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/driver_joined"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="Join 2016"-->
+            <!--                android:textSize="14sp"-->
+            <!--                android:textColor="#888888" />-->
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/ride_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$15.00"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <!-- Rider Detail Section -->
+    <LinearLayout
+        android:id="@+id/rider_detail_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_section"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:padding="16dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rider detail"
+                android:textColor="#FFA000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/map_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:textSize="18dp"
+                android:text="Map view"/>
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/start_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2715 Ash Dr. San Jose, South Dakota 83475"
+            android:drawableLeft="@drawable/ic_location_start"
+            android:drawablePadding="8dp"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/end_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1901 Thornridge Cir. Shiloh, Hawaii 81063"
+            android:drawableLeft="@drawable/ic_location_end"
+            android:drawablePadding="8dp"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+
+    <!-- Time and People Information -->
+    <LinearLayout
+        android:id="@+id/time_ride_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rider_detail_section"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:padding="16dp"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/start_time_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start time"
+                android:textColor="#888888"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/start_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="25 June, 09:00AM"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/return_time_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Return time"
+                android:textColor="#888888"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/return_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="N/A"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/ride_with_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ride with"
+                android:textColor="#888888"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/ride_with"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 people"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Passenger List Section -->
+    <LinearLayout
+        android:id="@+id/passenger_list_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/time_ride_section"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Passenger"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#FFA000" />
+
+        <TextView
+            android:id="@+id/seat_booked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 seats booked"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:textColor="#0000FF"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_profile" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_profile" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_profile" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_profile" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Rider Detail Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passenger_list_section"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vehicle info"
+            android:textColor="#FFA000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Model" />
+
+        <TextView
+            android:id="@+id/model"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Car"
+            android:drawablePadding="8dp"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <!-- Review Section -->
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@id/passenger_list_section"-->
+    <!--        android:orientation="vertical"-->
+    <!--        android:background="#FFFFFF"-->
+    <!--        android:padding="16dp">-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="Review"-->
+    <!--            android:textSize="16sp"-->
+    <!--            android:textStyle="bold"-->
+    <!--            android:textColor="#FFA000" />-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="horizontal"-->
+    <!--            android:layout_marginTop="8dp">-->
+
+    <!--            <ImageView-->
+    <!--                android:layout_width="40dp"-->
+    <!--                android:layout_height="40dp"-->
+    <!--                android:layout_marginEnd="8dp"-->
+    <!--                android:src="@drawable/ic_profile" />-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_weight="1"-->
+    <!--                android:orientation="vertical">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/review_name"-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="Wade Warren"-->
+    <!--                    android:textSize="14sp"-->
+    <!--                    android:textStyle="bold" />-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/review_date"-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="25 Jan 2023"-->
+    <!--                    android:textSize="12sp"-->
+    <!--                    android:textColor="#888888" />-->
+    <!--            </LinearLayout>-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/review_rating"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:text="4.8 ⭐"-->
+    <!--                android:textSize="16sp"-->
+    <!--                android:textStyle="bold" />-->
+    <!--        </LinearLayout>-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/review_comment"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="Excellent ride, very comfortable and smooth experience!"-->
+    <!--            android:textSize="14sp"-->
+    <!--            android:layout_marginTop="8dp" />-->
+    <!--    </LinearLayout>-->
+
+    <!-- Action Buttons -->
+    <LinearLayout
+        android:weightSum="100"
+        android:id="@+id/action_buttons_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:padding="3dp"
+        android:background="#FFFFFF">
+
+        <Button
+            android:layout_weight="33"
+            android:id="@+id/start_ride_button"
+            android:layout_width="0dp"
+            android:textSize="10sp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFA000"
+            android:text="Start Ride"
+            android:visibility="visible"/>
+
+        <Button
+            android:layout_weight="33"
+            android:id="@+id/end_ride_button"
+            android:textSize="10sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFA000"
+            android:text="End Ride"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/cancel_ride_button"
+            android:layout_width="0dp"
+            android:textSize="10sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="33"
+            android:text="Cancel ride"
+            android:backgroundTint="#FFA000"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/request_list_button"
+            android:layout_width="0dp"
+            android:textSize="10sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="33"
+            android:text="Request"
+            android:backgroundTint="#FFA000"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+        <!--        <Button-->
+        <!--            android:id="@+id/message_button"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_weight="1"-->
+        <!--            android:text="Message"-->
+        <!--            android:backgroundTint="#888888"-->
+        <!--            android:textColor="#FFFFFF"-->
+        <!--            android:textStyle="bold"-->
+        <!--            android:layout_marginStart="8dp" />-->
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fillViewport="true"
+    tools:context="com.example.rideshare.fragment.PublishFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+        <!-- Start Point -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="8dp">
+
+<!--            <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/ic_location_start" />-->
+
+            <AutoCompleteTextView
+                android:id="@+id/start_point_auto_complete"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:focusableInTouchMode="false"
+                android:clickable="true"
+                android:drawableLeft="@drawable/ic_location_start"
+                android:hint=" Enter start point"
+                android:background="@drawable/custom_input_background"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+        </LinearLayout>
+
+        <!-- Stops -->
+
+        <!-- Dynamic stops will be added here programmatically -->
+        <LinearLayout
+            android:id="@+id/stops_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <Button
+            android:id="@+id/add_stop_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#007BFF"
+            android:text="Add Stop"
+            android:layout_marginTop="8dp" />
+
+        <!-- End Point -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp">
+
+<!--            <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/ic_location_end" />-->
+
+            <AutoCompleteTextView
+                android:id="@+id/end_point_auto_complete"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint=" Enter end point"
+                android:focusableInTouchMode="false"
+                android:clickable="true"
+                android:drawableLeft="@drawable/ic_location_end"
+                android:background="@drawable/custom_input_background"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+        </LinearLayout>
+
+        <!-- Ride Information -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ride Information"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:paddingTop="24dp"
+            android:paddingBottom="8dp" />
+
+        <!-- Date & Time -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date &amp; Time"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/date_time_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint=" Departure datetime"
+            android:inputType="datetime"
+            android:background="@drawable/custom_input_background"
+            android:focusable="false"
+            android:clickable="true"/>
+
+        <!-- Number of Passengers -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No of Passengers?"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp" />
+
+        <Spinner
+            android:id="@+id/passengers_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/custom_input_background"
+            android:entries="@array/person_array" />
+
+        <!-- Price per Seat -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Price per Seat?"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp" />
+
+        <EditText
+            android:id="@+id/price_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/custom_input_background"
+            android:hint=" Your desired price (đồng)"
+            android:inputType="numberDecimal" />
+
+        <!-- Recommended Price -->
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Recommended Price"-->
+<!--            android:textSize="14sp"-->
+<!--            android:paddingTop="8dp"-->
+<!--            android:paddingBottom="8dp" />-->
+
+        <!-- Select Vehicle -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Vehicle"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp" />
+
+        <Spinner
+            android:id="@+id/vehicle_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/custom_input_background"
+            android:entries="@array/vehicle_list_array" />
+
+        <!-- Publish Ride Button -->
+        <Button
+            android:id="@+id/publish_ride_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#007BFF"
+            android:text="Publish Ride"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp" />
+
+
+    </LinearLayout>
+</ScrollView>

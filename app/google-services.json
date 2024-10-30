@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "299839026292",
+    "project_id": "ridesharing-92287",
+    "storage_bucket": "ridesharing-92287.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299839026292:android:a2dd03c6259cf2dc5b4d21",
+        "android_client_info": {
+          "package_name": "com.example.rideshare"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2CTQiOmY48K4yVlDAvJo6uhGeCM-VhlM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

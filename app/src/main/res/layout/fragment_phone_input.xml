@@ -1,0 +1,82 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#5EFFFFFF"
+    tools:context="com.example.rideshare.fragment.PhoneInputFragment">
+
+    <ImageView
+        android:id="@+id/image_welcome"
+        android:layout_width="match_parent"
+        android:layout_height="255dp"
+        android:src="@drawable/welcome" />
+
+    <TextView
+        android:id="@+id/text_login"
+        android:layout_below="@+id/image_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Login"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:layout_centerInParent="true"/>
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_width="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        android:textSize="18sp"
+        android:layout_below="@+id/text_login"
+        android:text="Welcome, please login your account using mobile phone"/>
+
+    <LinearLayout
+        android:id="@+id/linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:layout_below="@+id/text_view"
+        android:layout_marginTop="8dp">
+        <Spinner
+            android:id="@+id/country_code_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="2dp"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:background="@drawable/custom_input_background"
+            android:entries="@array/country_codes" />
+        <EditText
+            android:id="@+id/phone_input"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:hint=" Enter your phone number"
+            android:inputType="phone"
+            android:layout_marginEnd="20dp"
+            android:textSize="20sp"
+            android:background="@drawable/custom_input_background"
+            android:layout_weight="1"
+            android:maxLength="9" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/next_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:text="Next"
+        android:textStyle="bold"
+        android:layout_below="@id/linear_layout"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#007BFF"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
